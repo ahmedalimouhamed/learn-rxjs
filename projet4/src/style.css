@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.95);
+    border-radius:15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+h1{
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+
+.controls{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+select, button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select{
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+}
+
+button{
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+}
+
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card{
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3sease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.5em;
+}
+
+.portfolio-card{
+    grid-column: span 1
+}
+
+.value{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.change{
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.change.positive{
+    color: #27ae60;
+}
+
+.change-negative{
+    color: #e74c3c;
+}
+
+.stocks-grid{
+    display: grid;
+    gap: 15px;
+}
+
+.stock-item{
+    display: grid;
+    grid-template-columns: 1ft auto auto;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.stock-symbol{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.stock-price{
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.stock-change.positive{
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.stock-change.negative{
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.chart-card{
+    grid-column: span 2;
+}
+
+.alerts-card{
+    grid-column: span 2;
+}
+
+.alerts-container{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.alert{
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    color: #856404;
+}
+
+.alert.critical{
+    background: #f8d7da;
+    border-left-color: #dc3545;
+    color: #721c24;
+}
+
+.alert.info{
+    background: #d1ecf1;
+    border-left-color: #007bff;
+    color: #0056b3;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 300px;
+}

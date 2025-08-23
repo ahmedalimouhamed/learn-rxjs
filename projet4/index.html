@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Financier Temps réel</h1>
+
+            <div class="controls">
+                <select name="" id="speedSelect">
+                    <option value="1000">Vitesse: Normale</option>
+                    <option value="500">Vitesse: Rapide</option>
+                    <option value="2000">Vitesse: Lent</option>
+                </select>
+                <button id="addStockBtn">+ Ajouter Action</button>
+            </div>
+        </header>
+
+        <div class="grid-container">
+            <div class="card portfolio-card">
+                <h2>Portfolio</h2>
+                <div id="portfolioValue" class="value">€0.00</div>
+                <div id="portfolioChange" class="change">+0.00%</div>
+                <div class="chart-container">
+                    <canvas id="portfolioChart" height="200"></canvas>
+                </div>
+            </div>
+
+            <div class="card stockes-card">
+                <h2>Actions en Temps Réel</h2>
+                <div class="stocks-grid" id="stocksContainer">
+
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h2>évolution des prix</h2>
+                <div class="chart-container">
+                    <canvas id="priceChart" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h2>Volume d'échanges</h2>
+                <div class="chart-container">
+                    <canvas id="volumeChart" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="card alerts-card">
+                <h2>Alertes Marché</h2>
+                <div id="alertsContainer" class="alerts-container">
+                    <div class="alert">Aucune alerte pour le moment</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
