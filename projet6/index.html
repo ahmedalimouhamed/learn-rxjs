@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Système monitoring IOT</h1>
+            <div class="controls">
+                <select name="" id="seedSelect">
+                    <option value="1000">Vitesse: Normale</option>
+                    <option value="500">Vitesse: Rapide</option>
+                    <option value="2000">Vitesse: Lent</option>
+                </select>
+                <button id="addSensorBtn">+ Ajouter un capteur</button>
+                <button id="simulateFaultBtn">Simuler Panne</button>
+            </div>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Capteurs Actifs</span>
+                <span class="stat-value" id="activeSensors">0</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-label">Température Moyenne</span>
+                <span class="stat-value" id="avgTemp">0°C</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Humidité Moyenne</span>
+                <span class="stat-value" id="avgHumidity">0%</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Alertes Actives</span>
+                <span class="stat-value" id="activeAlerts">0</span>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="card sensor-card">
+                <h2>Capteur en Temps Réel</h2>
+                <div class="sensor-grid" id="sensorsContainer">
+
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h2>Evolution Température</h2>
+                <div class="chart-container" id="" height="300">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h2>Evolution Humidité</h2>
+                <div class="chart-container" id="" height="300">
+                    <canvas id="humidityChart"></canvas>
+                </div>
+            </div>  
+
+            <div class="card map-card">
+                <h2>Localisation Capteurs</h2>
+                <div class="map-container" id="mapContainer">
+                    <div class="map-grid">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card alerts-card">
+                <h2>Alerts Systeme</h2>
+                <div id="alertsContainer" class="alerts-container">
+                    <div class="alert">Aucune alerte pour le moment</div>
+                </div>
+            </div>
+
+            <div class="card analytics-card">
+                <h2>Analytics Temps Réel</h2>
+                <div class="analytics-grid">
+                    <div class="analytic">
+                        <span class="analytic-label">Max Température</span>
+                        <span class="analytic-value" id="maxTemp">0°C</span>
+                    </div>
+                    <div class="analytic">
+                        <span class="analytic-label">Min Température</span>
+                        <span class="analytic-value" id="minTemp">0°C</span>
+                    </div>
+                    <div class="analytic">
+                        <span class="analytic-label">Batterie Moyenne</span>
+                        <span class="analytic-value" id="avgBattery">0%</span>
+                    </div>
+                    <div class="analytic">
+                        <span class="analytic-label">Débit données</span>
+                        <span class="analytic-value" id="dataRate">0 KB/s</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
